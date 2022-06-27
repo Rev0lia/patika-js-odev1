@@ -1,6 +1,6 @@
 const greeting = document.querySelector(".greeting");
 const dateElement = document.querySelector(".date");
-const date = new Date();
+
 const dayArr = [
     "Pazar",
     "Pazartesi",
@@ -18,6 +18,12 @@ if (userName == "" || userName == null) {
 }
 
 greeting.innerHTML = `Merhaba, <strong>${userName}</strong>! Hoş Geldin!`;
-dateElement.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${
-    dayArr[date.getDay()]
-}`;
+
+function clock() {
+    const date = new Date();
+    dateElement.innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${
+        dayArr[date.getDay()]
+    }`;
+}
+
+setInterval(clock, 1000);
