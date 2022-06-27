@@ -25,5 +25,5 @@ function clock() {
         dayArr[date.getDay()]
     }`;
 }
-
+ 
 setInterval(clock, 1000);
